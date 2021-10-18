@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'SVN-PoppinsSemiBold';
-    src: url(SVN-PoppinsSemiBold.ttf);
+    src: url(./fonts/SVN-PoppinsSemiBold.ttf);
 }
 @font-face {
     font-family: 'SVN-Poppins';
-    src: url(SVN-Poppins.ttf);
+    src: url(./fonts/SVN-Poppins.ttf);
 }
 :root {
     --main-color: #b36f46;
@@ -37,25 +37,98 @@ body{
 #header .navmenu {
     float: left;
 }
-#header .navmenu ul {
+#header .navmenu > ul {
     list-style-type: none;
 }
-#header .navmenu ul li{
+#header .navmenu > ul > li{
     float: left;
     line-height: 11vh;
     margin-left: 50px;
     font-family: 'SVN-PoppinsSemiBold';
     font-size: 16px;
+    position: relative;
 }
-#header .navmenu ul li a{
+#header .navmenu > ul > li > a{
     color: black;
     text-transform: uppercase;
     text-decoration: none;
     font-family: 'SVN-PoppinsSemiBold';
 }
-#header .navmenu ul li a:hover{
+#header .navmenu > ul > li > a:hover{
     color: var(--main-color);
 }
+
+#header .navmenu>ul>li>ul{
+    list-style-type: none;
+    /* border:1px solid red; */
+    width:200px;
+    background: white;
+    position: absolute;
+    left: 0;
+    padding:8px 0;
+    display: none;
+    z-index: 1;
+    /* top:0; */
+}
+#header .navmenu>ul>li:hover>ul{
+    display:block;
+}
+#header .navmenu>ul>li>ul>li{
+    text-transform: none;
+    font-weight: normal;
+    height: 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 32px;
+     /* border:1px solid yellow; */
+     padding:0 10px;
+     color:black;
+     position: relative;
+}
+#header .navmenu>ul>li>ul>li::before{
+    content:">> ";
+}
+#header .navmenu>ul>li>ul>li:hover{
+    color:yellow;
+    background:var(--main-color);
+    animation: slide 1s;
+}
+#header .navmenu>ul>li>ul>li:hover>a{
+    color:yellow;
+}
+#header .navmenu>ul>li>ul>li>a{
+    color:black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+@keyframes slide {
+    0%{left:10px;}
+    20%{left:-8px;}
+    40%{left:6px;}
+    60%{left:-4px;}
+    80%{left:2px;}
+    100%{left:0;}
+}
+#newsfeed{
+    height:36px;
+    margin: 10px 0;
+}
+#newsfeed .dts{
+    height: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size:0.75rem;
+    color:yellow;
+    background:var(--maincolor);
+    width:120px;
+    line-height: 36px;
+    text-align: right;
+    float:left;
+}
+
 
 #header .sup{
     float: left;
@@ -100,7 +173,6 @@ body{
 }
 #content section{
     width: calc(1460px);
-    background: violet;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 83.4vh;
@@ -111,7 +183,7 @@ body{
     font-size: 1.7rem;
 }
 #content section:nth-of-type(1) {
-    background-image: linear-gradient(0, #27232069, #2b272669), url(1.jpg);
+    background-image: linear-gradient(0, #27232069, #2b272669), url(./img/1.jpg);
 }
 #content section:nth-of-type(1) p{
     color: white;
@@ -124,7 +196,7 @@ body{
     padding: 10px 10px; 
 }
 #content section:nth-of-type(2){
-    background-image: linear-gradient(0, #57331e69, #52321e69), url(2.jpg);
+    background-image: linear-gradient(0, #57331e69, #52321e69), url(./img/2.jpg);
     padding-top: 100px;
     padding-left: 300px;
     word-spacing: -1.5px;
@@ -143,12 +215,12 @@ body{
     width: 80vh;
     padding-left: 50px;
     border-left: 1px solid white;
-    margin-left: 100px;
+    margin-left: 175px;
     margin-top: 20px;
     word-spacing: 2px;
 }
 #content section:nth-of-type(3){
-    background-image: linear-gradient(0, #57331e69, #52321e69), url(3.jpg);
+    background-image: linear-gradient(0, #57331e69, #52321e69), url(./img/3.jpg);
     position:absolute;
 }
 #content section:nth-of-type(3) > div{
@@ -171,7 +243,7 @@ body{
 }
 #content section:nth-of-type(4){
     display: block;
-    background-image: linear-gradient(0, #57331e69, #52321e69), url(4.jpg);
+    background-image: linear-gradient(0, #57331e69, #52321e69), url(./img/4.jpg);
     margin-top: 83.4vh;
     position: absolute;
 }
@@ -191,7 +263,7 @@ body{
 }
 
 #content section:nth-of-type(5){
-    background-image: linear-gradient(0, #57331e69, #52321e69), url(5.png);
+    background-image: linear-gradient(0, #57331e69, #52321e69), url(./img/5.png);
     position: absolute;
     margin-top: 166.8vh;
 }
@@ -210,7 +282,7 @@ body{
     margin-bottom: 25px;
 }
 #content section:nth-of-type(6){
-    background-image: linear-gradient(0, #57331e69, #52321e69), url(6.jpg) ;
+    background-image: linear-gradient(0, #57331e69, #52321e69), url(./img/6.jpg) ;
     margin-top: 250.2vh;
     position: absolute;
     height: 643px;
