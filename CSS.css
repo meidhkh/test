@@ -112,22 +112,6 @@ body{
     80%{left:2px;}
     100%{left:0;}
 }
-#newsfeed{
-    height:36px;
-    margin: 10px 0;
-}
-#newsfeed .dts{
-    height: 100%;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size:0.75rem;
-    color:yellow;
-    background:var(--maincolor);
-    width:120px;
-    line-height: 36px;
-    text-align: right;
-    float:left;
-}
 
 
 #header .sup{
@@ -357,5 +341,67 @@ body{
     display: none;
 }
 
-/* background-image: linear-gradient(0, rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
-    url(https:/news.pstatic.net/image/421/2021/06/29/0005443309_001_20210629080908730.jpg); */
+
+
+#intro {
+    margin-top: 11vh;
+    margin-right: 0 ;
+    padding: 0 5.5vh;
+    width: 100%;
+}
+#intro .intro-left{
+
+    background-image: linear-gradient(0, #57331e69, #52321e69), url(./img/2.jpg);
+    background-size: 100% 100%;
+    width: 40%;
+    height: 83.4vh;
+    position:absolute;
+}
+#intro .intro-left p{
+    color: white;
+    text-transform: uppercase;
+    font-family: 'SVN-PoppinsSemiBold';
+    font-size: 40px;
+    line-height: 83.4vh;
+    text-align: center;
+}    
+
+#intro .intro-right{
+    position: relative;
+    left: 45%;
+    width: 55%;
+}
+#intro .intro-right > p{
+    text-align: justify;
+    line-height: 27px;
+    padding-top: 20px;
+}
+#intro .intro-right .intro-inf{
+    padding-top:25px;
+    width: 100%;
+}
+#intro .intro-right .intro-inf > h2{
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+#intro .intro-right .intro-inf ul{
+    list-style-type: none;
+}
+#intro .intro-right .intro-inf i{
+    float: left;
+}
+#intro .intro-right .intro-inf h3{
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+#intro .intro-right .intro-inf .left{
+    width: 50%;
+    float: left;
+}
+#intro .intro-right .intro-inf .right{
+    float: left;
+}
+
+
+    
